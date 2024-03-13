@@ -1,4 +1,4 @@
-module github.com/zhaokm/sleep
+module github.com/zhaokm/logReviewer
 
 replace github.com/go-zhaokm/bedrock-claude/Service => ./Service
 
@@ -17,6 +17,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/internal/configsources v1.3.3 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.6.3 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/ini v1.8.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.34.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.11.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.11.5 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.20.2 // indirect
