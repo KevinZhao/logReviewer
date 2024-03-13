@@ -8,47 +8,6 @@ import (
 	"time"
 )
 
-func FolderIteration(folderPath string) string {
-	var CodeBuilder strings.Builder
-	var codes []string
-
-	err := filepath.Walk(folderPath, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-
-		code, err := os.ReadFile(path)
-		if err != nil {
-			return err
-		}
-
-		fmt.Printf("Source Code %s\n", path)
-		CodeBuilder.WriteString(string(code))
-
-		codes = append(codes, string(code))
-
-		return nil
-	})
-
-	if err != nil {
-		fmt.Println("遍历文件夹时出错：", err)
-	}
-
-	systemPrompt, userPrompt := BuildGPTPrompt(codes)
-
-	fmt.Println("prompt design")
-	fmt.Println(systemPrompt)
-	fmt.Println(userPrompt)
-
-	_, jsonResponse, _ := CallOpenAI(userPrompt, systemPrompt)
-
-	fmt.Println("gpt4 response")
-	fmt.Println(jsonResponse)
-
-	// 返回Java代码的字符串
-	return ""
-}
-
 func FolderIteration_new(folderPath string) string {
 	var codeBuilder strings.Builder
 	var codes []string
@@ -82,6 +41,5 @@ func FolderIteration_new(folderPath string) string {
 
 	fmt.Println(result)
 
-	// 返回合并后的Go代码字符串
 	return codeBuilder.String()
 }

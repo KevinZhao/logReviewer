@@ -40,7 +40,7 @@ type Clade3OutputMessage struct {
 	Model        string                    `json:"model"`
 	Role         string                    `json:"role"`
 	StopReason   string                    `json:"stop_reason"`
-	StopSequence *string                   `json:"stop_sequence"` // 使用指针，因为它可以是null
+	StopSequence *string                   `json:"stop_sequence"`
 	Type         string                    `json:"type"`
 	Usage        Clade3OutputUsageInfo     `json:"usage"`
 }
